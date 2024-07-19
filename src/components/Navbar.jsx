@@ -13,16 +13,18 @@ const Navbar = () => {
     justify-content: space-between;
   `;
 
-  // left header part
+  // left header part /////////////////////////////////////////////////////////////////
   const Left = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
   `;
+
   const Language = styled.span`
     font-size: 14px;
     cursor: pointer;
   `;
+
   const Searchcontainer = styled.div`
     border: 1px solid lightgray;
     display: flex;
@@ -35,7 +37,7 @@ const Navbar = () => {
     border: none;
   `;
 
-  // Center header part
+  // Center header part ///////////////////////////////////////////////////////////////
   const Center = styled.div`
     flex: 1;
     text-align: center;
@@ -44,7 +46,8 @@ const Navbar = () => {
   const Logo = styled.h1`
     font-weight: bold;
   `;
-  // Right header part
+
+  // Right header part /////////////////////////////////////////////////////////////////
   const Right = styled.div`
     flex: 1;
     display: flex;
@@ -62,7 +65,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language>English</Language>
+          <Language>EN</Language>
           <Searchcontainer>
             <Input />
             <SearchIcon style={{ color: "gray", fontSize: "14px" }} />
