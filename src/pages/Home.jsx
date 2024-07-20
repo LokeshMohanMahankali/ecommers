@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcment";
 import Slider from "../components/Slider";
+import Category from "../components/Category";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Announcement />
       <Navbar />
       <Slider />
+      <Category />
     </div>
   );
 };
