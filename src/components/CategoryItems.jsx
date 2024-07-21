@@ -44,7 +44,6 @@ const CategoryItems = ({ item }) => {
         <Title>{item.title}</Title>
         <Button>SHOP NOW</Button>
       </Info>
-      dadasd
     </Container>
   );
 };
