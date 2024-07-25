@@ -4,7 +4,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import XIcon from "@mui/icons-material/X";
 import PinterestIcon from "@mui/icons-material/Pinterest";
-
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 const Container = styled.div`
   display: flex;
 `;
@@ -36,20 +38,47 @@ const Socialicons = styled.div`
   padding: 7px;
   width: 40px;
   height: 40px;
+  cursor: pointer;
 `;
 
 const Center = styled.div`
   flex: 1;
+  margin-top: 35px;
 `;
 
-const Title = styled.h3``;
+const Title = styled.h3`
+  margin-bottom: 20px;
+  font-weight: bold;
+`;
 
-const List = styled.ul``;
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+`;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  width: 50%;
+  margin-bottom: 10px;
+`;
 
 const Right = styled.div`
   flex: 1;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+const ContactItem = styled.div`
+  display: flex;
+`;
+
+const Payment = styled.img`
+  width: 15rem;
 `;
 
 const Footer = () => {
@@ -92,7 +121,23 @@ const Footer = () => {
           <ListItem>Terms</ListItem>
         </List>
       </Center>
-      <Right></Right>
+      <Right>
+        <Title>Contact</Title>
+        <ContactItem>
+          <LocationOnIcon style={{ marginRight: "10px" }} /> 622 Dixie Path ,
+          South Tobinchester 98336
+        </ContactItem>
+        <ContactItem>
+          <LocalPhoneIcon style={{ marginRight: "10px" }} /> +1 234 56 78
+        </ContactItem>
+        <ContactItem>
+          <EmailIcon style={{ marginRight: "10px" }} /> contact@lama.dev
+        </ContactItem>
+        <Payment
+          src="https://i.ibb.co/Qfvn4z6/payment.png"
+          alt="paymentimages"
+        />
+      </Right>
     </Container>
   );
 };
