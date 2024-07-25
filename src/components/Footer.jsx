@@ -9,17 +9,45 @@ const Container = styled.div`
   display: flex;
 `;
 
-const Logo = styled.div``;
-const Desc = styled.div``;
-const SocialContaner = styled.div``;
-const Socialicons = styled.div``;
-
 const Left = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+  padding: 20px;
+  gap: 10px;
 `;
+
+const Logo = styled.div`
+  font-size: 30px;
+  font-weight: bold;
+`;
+const Desc = styled.div`
+  width: 20rem;
+  margin-bottom: 10px;
+`;
+const SocialContaner = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+const Socialicons = styled.div`
+  background-color: #${(props) => props.color};
+  border-radius: 20px;
+  padding: 7px;
+  width: 40px;
+  height: 40px;
+`;
+
 const Center = styled.div`
   flex: 1;
 `;
+
+const Title = styled.h3``;
+
+const List = styled.ul``;
+
+const Listitems = styled.li``;
+
 const Right = styled.div`
   flex: 1;
 `;
@@ -35,16 +63,16 @@ const Footer = () => {
           humour, or randomised words which don't look even slightly believable.
         </Desc>
         <SocialContaner>
-          <Socialicons>
+          <Socialicons color="3B5999">
             <FacebookIcon />
           </Socialicons>
-          <Socialicons>
+          <Socialicons color="E4405F">
             <InstagramIcon />
           </Socialicons>
-          <Socialicons>
+          <Socialicons color="55ACEE">
             <XIcon />
           </Socialicons>
-          <Socialicons>
+          <Socialicons color="E60023">
             <PinterestIcon />
           </Socialicons>
         </SocialContaner>
