@@ -17,6 +17,12 @@ const Top = styled.span`
   justify-content: space-between;
   align-items: center;
 `;
+
+const TopButton = styled.button`
+  padding: 10px;
+  font-wight: 600;
+  cursor: pointer;
+`;
 const Bottom = styled.span``;
 
 const Cart = () => {
@@ -26,7 +32,10 @@ const Cart = () => {
       <Announcement />
       <Wrapper>
         <Title>YOUR BAG</Title>
-        <Top></Top>
+        <Top>
+          <TopButton>CONTINUE SHOPPING</TopButton>
+          <TopButton>CHECKOUT NOW</TopButton>
+        </Top>
         <Bottom></Bottom>
       </Wrapper>
       <Footer />
