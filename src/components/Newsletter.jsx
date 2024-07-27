@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SendIcon from "@mui/icons-material/Send";
 
 const Container = styled.div`
-  height: 70vh;
+  height: 60vh;
   display: flex;
   background-color: #fcf5f5;
   justify-content: center;
@@ -21,7 +21,7 @@ const Description = styled.div`
 `;
 const InputContainer = styled.div`
   height: 34px;
-  width: 80%;
+  width: 55%;
   background-color: white;
   display: flex;
   justify-content: space-between;
