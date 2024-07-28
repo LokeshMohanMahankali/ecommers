@@ -22,7 +22,14 @@ const TopButton = styled.button`
   padding: 10px;
   font-wight: 600;
   cursor: pointer;
+  border: ${(props) => props.type === "filled" && "none"};
+  background-color: ${(props) =>
+    props.type === "filled" ? "black" : "transparent"};
+  color: ${(props) => props.type === "filled" && "white"};
 `;
+const Toptexts = styled.span``;
+const Toptext = styled.span``;
+
 const Bottom = styled.span``;
 
 const Cart = () => {
@@ -34,7 +41,11 @@ const Cart = () => {
         <Title>YOUR BAG</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopButton>CHECKOUT NOW</TopButton>
+          <Toptexts>
+            <Toptext>Shopping Bag(2)</Toptext>
+            <Toptext>Your Wishlist(0)</Toptext>
+          </Toptexts>
+          <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom></Bottom>
       </Wrapper>
