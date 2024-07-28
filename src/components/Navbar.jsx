@@ -3,7 +3,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-const Container = styled.div``;
+const Container = styled.div`
+  height: 60px;
+`;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
