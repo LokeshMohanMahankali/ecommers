@@ -2,9 +2,12 @@ import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { mobile } from "../Responsive";
+import { Margin } from "@mui/icons-material";
 
 const Container = styled.div`
   height: 60px;
+  ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
@@ -12,6 +15,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ padding: "10px 0px" })}
 `;
 
 // left header part /////////////////////////////////////////////////////////////////
@@ -19,11 +23,19 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  ${mobile({
+    flex: 2,
+    justifycontent: "10px",
+    alignitems: "center",
+  })}
 `;
 
 const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
+  ${mobile({
+    display: "none",
+  })}
 `;
 
 const Searchcontainer = styled.div`
@@ -36,6 +48,9 @@ const Searchcontainer = styled.div`
 
 const Input = styled.input`
   border: none;
+  ${mobile({
+    width: "50px",
+  })}
 `;
 
 // Center header part ///////////////////////////////////////////////////////////////
@@ -46,6 +61,10 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  ${mobile({
+    fontSize: "24px",
+    margin: "0px 40px 0px 0px",
+  })}
 `;
 
 // Right header part /////////////////////////////////////////////////////////////////
@@ -60,6 +79,12 @@ const Menuitems = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  ${mobile({
+    fontSize: "14px",
+    margin: "0px 25px 0px 0px",
+    display: "flex",
+    alignitems: "center",
+  })}
 `;
 const Navbar = () => {
   return (
@@ -68,7 +93,7 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <Searchcontainer>
-            <Input />
+            <Input placeholder="Search .." />
             <SearchIcon style={{ color: "gray", fontSize: "14px" }} />
           </Searchcontainer>
         </Left>

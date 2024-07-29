@@ -7,8 +7,13 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { mobile } from "../Responsive";
+
 const Container = styled.div`
   display: flex;
+  ${mobile({
+    flexDirection: "column",
+  })}
 `;
 
 const Left = styled.div`
@@ -44,11 +49,17 @@ const Socialicons = styled.div`
 const Center = styled.div`
   flex: 1;
   margin-top: 35px;
+  ${mobile({
+    display: "none",
+  })}
 `;
 
 const Title = styled.h3`
   margin-bottom: 20px;
   font-weight: bold;
+  ${mobile({
+    fontSize: "30px",
+  })}
 `;
 
 const List = styled.ul`
@@ -71,6 +82,10 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  ${mobile({
+    padding: " 0px 0px 20px 20px",
+    background: "lightgray",
+  })}
 `;
 
 const ContactItem = styled.div`

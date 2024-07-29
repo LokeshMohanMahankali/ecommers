@@ -1,10 +1,16 @@
 import { css } from "styled-components";
 
-export const mobil = (props) => {
+export const mobile = (props) => {
   return css`
-    @media only screen and (max-width: 414px) {
-      display: none;
-      backgound-color: green;
+    @media only screen and (max-width: 450px) {
+      ${props}
+    }
+  `;
+};
+
+export const tablet = (props) => {
+  return css`
+    @media only screen and (max-width: 880px) {
     }
   `;
 };
