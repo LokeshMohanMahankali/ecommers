@@ -10,11 +10,11 @@ import Cart from "./pages/Cart.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
     {/* <Productlist /> */}
     {/* <Product /> */}
     {/* <Register /> */}
     {/* <Login /> */}
-    {/* <Cart /> */}
+    <Cart />
   </React.StrictMode>
 );

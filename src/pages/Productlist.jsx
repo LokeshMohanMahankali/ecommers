@@ -4,27 +4,45 @@ import Announcement from "../components/Announcment";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import { mobile } from "../Responsive";
+import { Padding } from "@mui/icons-material";
 
 const Container = styled.div``;
 const Title = styled.h1``;
 const Filtercontainer = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({
+    // background: "Red",
+    // justifyContent: "space-around",
+  })}
 `;
 const Filters = styled.div`
   margin: 25px;
   display: flex;
   gap: 5px;
+  ${mobile({
+    width: "30px",
+    gap: "0px",
+    margin: "10px",
+  })}
 `;
 
 const Filtertext = styled.span`
   font-size: 27px;
   font-weight: 600;
+  ${mobile({
+    fontSize: "20px",
+  })}
 `;
 
 const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
+  ${mobile({
+    fontSize: "10px",
+    marginRight: "20px",
+  })}
 `;
 
 const Option = styled.option``;

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { mobile } from "../Responsive";
+import { Margin, Padding } from "@mui/icons-material";
 
 const Container = styled.div`
   width: 100vw;
@@ -19,11 +21,18 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
+  ${mobile({
+    width: "65%",
+  })}
 `;
 
 const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
+  ${mobile({
+    display: "flex",
+    justifyContent: "center",
+  })}
 `;
 
 const Form = styled.form`
@@ -46,6 +55,11 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
+  ${mobile({
+    display: "flex",
+    justifyContent: "center",
+    marginLeft: "65px",
+  })}
 `;
 
 const Link = styled.a`
