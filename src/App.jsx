@@ -1,12 +1,29 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import Products from "./components/Products";
+import Product from "./components/Product";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
+  const user = true;
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route exact path="/" element={<Home />}></Route>
+        <Route path="/products/:category" element={<Products />}></Route>
+        <Route path="/product" element={<Product />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
+        <Route
+          path="/Login"
+          element={user ? <Navigate to="/" /> : <Login />}
+        ></Route>
+        <Route
+          path="/Register"
+          element={user ? <Navigate to="/" /> : <Register />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
