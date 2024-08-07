@@ -5,7 +5,7 @@ import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../Responsive";
-import { Padding } from "@mui/icons-material";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div``;
 const Title = styled.h1``;
@@ -48,6 +48,9 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const Productlist = () => {
+  // const location = useLocation();
+  // console.log(location);
+
   return (
     <Container>
       <Navbar />
