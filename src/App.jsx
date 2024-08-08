@@ -6,6 +6,7 @@ import Product from "./components/Product";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Productlist from "./pages/Productlist";
 
 function App() {
   const user = true;
@@ -13,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
-        <Route path="/products/:category" element={<Products />}></Route>
+        <Route path="/products/:category" element={<Productlist />}></Route>
         <Route path="/product" element={<Product />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route

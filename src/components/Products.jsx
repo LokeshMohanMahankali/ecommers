@@ -11,11 +11,13 @@ const Container = styled.div`
 
 const Products = () => {
   return (
-    <Container>
-      {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
-      ))}
-    </Container>
+    <>
+      <Container>
+        {popularProducts.map((item) => (
+          <Product item={item} key={item.id} />
+        ))}
+      </Container>
+    </>
   );
 };
 

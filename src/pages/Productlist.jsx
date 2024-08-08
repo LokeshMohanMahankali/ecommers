@@ -6,6 +6,8 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../Responsive";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import { colors } from "@mui/material";
 
 const Container = styled.div``;
 const Title = styled.h1``;
@@ -13,8 +15,7 @@ const Filtercontainer = styled.div`
   display: flex;
   justify-content: space-between;
   ${mobile({
-    // background: "Red",
-    // justifyContent: "space-around",
+    justifyContent: "space-around",
   })}
 `;
 const Filters = styled.div`
@@ -24,7 +25,7 @@ const Filters = styled.div`
   ${mobile({
     width: "30px",
     gap: "0px",
-    margin: "10px",
+    marginLeft: "px",
   })}
 `;
 
@@ -48,8 +49,18 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const Productlist = () => {
-  // const location = useLocation();
-  // console.log(location);
+  const location = useLocation();
+  console.log(location.pathname.split("/")[2]);
+
+  const [filter, setFilter] = useState({});
+
+  const handlefilters = (e) => {
+    const value = e.target.value;
+    setFilter({
+      [e.target.value]: value,
+    });
+  };
+  console.log(filter);
 
   return (
     <Container>
@@ -59,16 +70,20 @@ const Productlist = () => {
       <Filtercontainer>
         <Filters>
           <Filtertext>Filter Products:</Filtertext>
-          <Select>
-            <Option>Color</Option>
-            <Option>White</Option>
-            <Option>Black</Option>
-            <Option>Red</Option>
-            <Option>Orange</Option>
-            <Option>Pink</Option>
+          <Select onChange={handlefilters}>
+            <Option disabled name="color" value="Color">
+              Color
+            </Option>
+            <Option value="White">White</Option>
+            <Option value="Black">Black</Option>
+            <Option value="Red">Red</Option>
+            <Option value="Orange">Orange</Option>
+            <Option value="Pink">Pink</Option>
           </Select>
-          <Select>
-            <Option>Size</Option>
+          <Select onChange={handlefilters}>
+            <Option name="Size" disabled>
+              Size
+            </Option>
             <Option>S</Option>
             <Option>M</Option>
             <Option>L</Option>
@@ -78,7 +93,7 @@ const Productlist = () => {
         </Filters>
         <Filters>
           <Filtertext>Sort products:</Filtertext>
-          <Select>
+          <Select name="Newest" onChange={handlefilters}>
             <Option selected>Newest</Option>
             <Option>Price (asc)</Option>
             <Option>Price (desc)</Option>
