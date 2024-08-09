@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import Product from "../components/Product";
 import { popularProducts } from "../pages/data";
 import styled from "styled-components";
+import axios from "axios";
 
 const Container = styled.div`
   display: flex;
@@ -8,8 +10,18 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
+const Products = ({ cat, filters, sort }) => {
+  const [Products, setProducts] = useState([]);
+  const [filterproducts, setFilterProducts] = useState([]);
 
-const Products = () => {
+  useEffect(() => {
+    const getproducts = async () => {
+      try {
+        const res = await axios.get("http://localhost:500/api/products");
+      } catch (err) {}
+    };
+  }, [cat]);
+
   return (
     <>
       <Container>
