@@ -6,6 +6,7 @@ import Announcement from "../components/Announcment";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../Responsive";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -79,7 +80,6 @@ const FilterSize = styled.select`
   margin-left: 15px;
   padding: 5px;
 `;
-const FilterSizeOption = styled.option``;
 
 const AddContainer = styled.div`
   display: flex;
@@ -114,6 +114,8 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const location = useLocation();
+  const cat = location.pathname.split("/")[2];
   return (
     <Container>
       <Navbar />

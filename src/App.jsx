@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Products from "./components/Products";
-import Product from "./components/Product";
+import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/products/:category" element={<Productlist />}></Route>
-        <Route path="/product" element={<Product />}></Route>
+        <Route path="/product/:id" element={<Product />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route
           path="/Login"

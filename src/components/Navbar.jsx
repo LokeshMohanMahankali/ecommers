@@ -4,6 +4,7 @@ import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { mobile } from "../Responsive";
 import { Margin } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -61,6 +62,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  cursor: pointer;
   ${mobile({
     fontSize: "24px",
     margin: "0px 40px 0px 0px",
@@ -98,7 +100,9 @@ const Navbar = () => {
           </Searchcontainer>
         </Left>
         <Center>
-          <Logo>LAMA</Logo>
+          <Link to="/">
+            <Logo>LAMA</Logo>
+          </Link>
         </Center>
         <Right>
           <Menuitems>Register</Menuitems>
