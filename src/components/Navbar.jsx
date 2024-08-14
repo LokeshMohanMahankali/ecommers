@@ -63,10 +63,12 @@ const Center = styled.div`
 const Logo = styled.h1`
   font-weight: bold;
   cursor: pointer;
+  border: none;
+  color: black;
   ${mobile({
     fontSize: "24px",
     margin: "0px 40px 0px 0px",
-  })}
+  })};
 `;
 
 // Right header part /////////////////////////////////////////////////////////////////

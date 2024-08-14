@@ -81,6 +81,8 @@ const FilterSize = styled.select`
   padding: 5px;
 `;
 
+const FilterSizeOption = styled.option``;
+
 const AddContainer = styled.div`
   display: flex;
   width: 50%;
@@ -116,6 +118,7 @@ const Button = styled.button`
 const Product = () => {
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
+
   return (
     <Container>
       <Navbar />
