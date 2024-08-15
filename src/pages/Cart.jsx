@@ -196,7 +196,7 @@ const Cart = () => {
                   </ProductId>
                   <ProductColor color="black" />
                   <ProductSize>
-                    <b>Size:</b> 20.5
+                    <b>Size:</b>
                   </ProductSize>
                 </Details>
               </ProductDetails>
