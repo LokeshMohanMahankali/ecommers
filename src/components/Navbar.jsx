@@ -63,7 +63,6 @@ const Center = styled.div`
 const Logo = styled.h1`
   font-weight: bold;
   cursor: pointer;
-  border: none;
   color: black;
   ${mobile({
     fontSize: "24px",
