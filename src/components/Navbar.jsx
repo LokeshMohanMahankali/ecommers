@@ -112,11 +112,13 @@ const Navbar = () => {
         <Right>
           <Menuitems>Register</Menuitems>
           <Menuitems>Sign-In</Menuitems>
-          <Menuitems>
-            <Badge color="secondary" badgeContent={quantity}>
-              <ShoppingCartIcon />
-            </Badge>
-          </Menuitems>
+          <Link to="/cart">
+            <Menuitems>
+              <Badge color="secondary" badgeContent={quantity}>
+                <ShoppingCartIcon />
+              </Badge>
+            </Menuitems>
+          </Link>
         </Right>
       </Wrapper>
     </Container>
