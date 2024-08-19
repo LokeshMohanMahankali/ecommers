@@ -67,7 +67,7 @@ const FilterContainer = styled.div`
 const Filter = styled.div`
   display: flex;
   align-item: center;
-  gap: 5px;
+  padding: 5px;
 `;
 const FilterTitle = styled.span`
   font-size: 20px;
@@ -78,10 +78,10 @@ const FilterColor = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  margin: 4px 5px;
   background-color: ${(props) => props.color};
 `;
 const FilterSize = styled.select`
-  margin-left: 15px;
   padding: 5px;
 `;
 
@@ -130,6 +130,7 @@ const Product = () => {
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
   const dispatch = useDispatch();
+
   useEffect(() => {
     const getproduct = async () => {
       try {
@@ -148,6 +149,7 @@ const Product = () => {
       setQuantity(quantity + 1);
     }
   };
+
   const handleClick = () => {
     dispatch(addProduct({ ...product, quantity, size, color }));
   };
@@ -172,7 +174,7 @@ const Product = () => {
               ))}
             </Filter>
             <Filter>
-              <FilterTitle>Size: </FilterTitle>f
+              <FilterTitle>Size:</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
