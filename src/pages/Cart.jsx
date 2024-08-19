@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcment";
@@ -8,6 +8,8 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { mobile } from "../Responsive";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
+import { userRequest } from "../requestMethods";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -147,12 +149,25 @@ const Button = styled.button`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripetoken, setStripetoken] = useState(null);
-
+  const history = useNavigate;
   const KEY = import.meta.env.VITE_APP_STRIPE;
 
   const onToken = (token) => {
     setStripetoken(token);
   };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripetoken.id,
+          amount: 500,
+        });
+        history.push("/success", { data: res.data });
+      } catch {}
+    };
+    stripetoken && makeRequest();
+  }, [stripetoken, cart.total, history]);
 
   return (
     <Container>
