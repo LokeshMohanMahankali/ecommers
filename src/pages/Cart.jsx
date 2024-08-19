@@ -9,8 +9,6 @@ import { mobile } from "../Responsive";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 
-const KEY = process.env.REACT_APP_STRIPE; // This will work after the changes
-
 const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 20px;
@@ -143,11 +141,14 @@ const Button = styled.button`
   background-color: black;
   color: white;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripetoken, setStripetoken] = useState(null);
+
+  const KEY = import.meta.env.VITE_APP_STRIPE;
 
   const onToken = (token) => {
     setStripetoken(token);
