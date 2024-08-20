@@ -166,7 +166,7 @@ const Cart = () => {
         history.push("/success", { data: res.data });
       } catch {}
     };
-    stripetoken && makeRequest();
+    stripetoken && cart.total >= 1 && makeRequest();
   }, [stripetoken, cart.total, history]);
 
   return (
