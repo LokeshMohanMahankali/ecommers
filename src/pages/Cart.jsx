@@ -149,7 +149,7 @@ const Button = styled.button`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripetoken, setStripetoken] = useState(null);
-  const history = useNavigate;
+  const history = useNavigate();
   const KEY = import.meta.env.VITE_APP_STRIPE;
 
   const onToken = (token) => {
@@ -163,7 +163,7 @@ const Cart = () => {
           tokenId: stripetoken.id,
           amount: 500,
         });
-        history.push("/success", { data: res.data });
+        history("/success", { state: { data: res.data } }); // Correctly using the history function to navigate
       } catch {}
     };
     stripetoken && cart.total >= 1 && makeRequest();
