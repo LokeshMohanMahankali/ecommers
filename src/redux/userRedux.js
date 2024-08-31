@@ -1,7 +1,7 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
-  name: "cart",
+  name: "user",
   initialState: {
     currentuser: null,
     isFetching: false,

@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { mobile } from "../Responsive";
-import { Margin, Padding } from "@mui/icons-material";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../redux/apiCalls";
 
 const Container = styled.div`
@@ -77,10 +75,15 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
+
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
   };
+
+  console.log(username, "usernameeeeeeeeeeee");
+  console.log(password, "passwordddddddddddddd");
 
   return (
     <Container>
@@ -89,16 +92,17 @@ const Login = () => {
         <Form>
           <Input
             placeholder="username"
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <Input
             placeholder="password"
             type="password"
-            onChange={(e) => setPassword(e.target.password)}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleClick}>LOGIN</Button>
+          <Button onClick={handleClick} disabled={isFetching}>
+            LOGIN
+          </Button>
+          {error && <Error>Something went wrong...</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
         </Form>
