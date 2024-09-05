@@ -57,6 +57,10 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
+  &:disable {
+    color: green;
+    cursor: none;
+  }
   ${mobile({
     display: "flex",
     justifyContent: "center",
@@ -71,6 +75,10 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
+const Error = styled.span`
+  color: red;
+`;
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -81,9 +89,6 @@ const Login = () => {
     e.preventDefault();
     login(dispatch, { username, password });
   };
-
-  console.log(username, "usernameeeeeeeeeeee");
-  console.log(password, "passwordddddddddddddd");
 
   return (
     <Container>
