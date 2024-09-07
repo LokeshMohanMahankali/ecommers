@@ -109,7 +109,9 @@ const Navbar = () => {
         </Center>
         <Right>
           <Menuitems>Register</Menuitems>
-          <Menuitems>Sign-In</Menuitems>
+          <Link to="/Login">
+            <Menuitems>Sign-In</Menuitems>
+          </Link>
           <Link to="/cart">
             <Menuitems>
               <Badge color="secondary" badgeContent={quantity}>
